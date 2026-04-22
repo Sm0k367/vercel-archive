@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "owner": "Sm0k367",
+    "alias": "DJ Smoke Stream / Epic Tech AI",
+    "github": "https://github.com/Sm0k367",
+    "total_projects_cataloged": 40,
+    "compiled_at": "2026-04-22"
+  },
+  "projects": [
+    {
+      "id": "epic-magic",
+      "name": "Epic Magic",
+      "title": "EPIC TECH AI • The Portal",
+      "description": "Cinematic cyberpunk landing portal — the main hub with DJ Smoke Stream character, golden hour visual effects, anti-hero chat via Grok 4, and full universe archive carousel. Flagship project.",
+      "previewUrl": "https://epic-magic.vercel.app",
+      "githubUrl": "https://github.com/Sm0k367/epic-magic",
+      "repo": "epic-magic",
+      "category": "Landing",
+      "tags": ["portal", "grok", "cinematic", "flagship"],
+      "status": "active"
+    },
+    {
+      "id": "grok-magic-chat",
+      "name": "Grok Magic Chat",
+      "title": "Grok Magic Chat",
+      "description": "Pay Once, Chat Forever — custom xAI/Grok 4 chat interface with magical theming and anti-hero persona.",
+      "previewUrl": "https://grok-magic-chat.vercel.app",
+      "githubUrl": "https://github.com/Sm0k367/grok-magic-chat",
+      "repo": "grok-magic-chat",
+      "category": "AI",
+      "tags": ["chat", "grok", "anti-hero"],
+      "status": "active"
+    },
+    {
+      "id": "dj-smoke-stream",
+      "name": "DJ Smoke Stream",
+      "title": "DJ Smoke Stream",
+      "description": "Flagship DJ site — 128 BPM midnight rituals, immersive audio-visual experience. Core of the music vertical.",
+      "previewUrl": "https://dj-smoke-stream.vercel.app",
+      "githubUrl": "https://github.com/Sm0k367/dj-smoke-stream",
+      "repo": "dj-smoke-stream",
+      "category": "Music",
+      "tags": ["dj", "music", "ritual", "flagship"],
+      "status": "active"
+    },
+    {
+      "id": "tunebot-ai",
+      "name": "Tunebot AI",
+      "title": "Tunebot AI",
+      "description": "AI music generation and recommendation interface. Multiple deployments across iterations.",
+      "previewUrl": "https://tunebot-ai.vercel.app",
+      "githubUrl": "https://github.com/Sm0k367/tunebot-ai",
+      "repo": "tunebot-ai",
+      "category": "Music",
+      "tags": ["ai", "music", "bot"],
+      "status": "active"
+    },
+    {
+      "id": "epic-avatar",
+      "name": "Epic Avatar",
+      "title": "Epic Avatar / Vatar Series",
+      "description": "AI avatar generator and visual identity experiments. Large family of variants (epic-vatar, eco-avatar, epicaibot, etc.).",
+      "previewUrl": "https://epic-avatar.vercel.app",
+      "githubUrl": "https://github.com/Sm0k367/epic-avatar",
+      "repo": "epic-avatar",
+      "category": "Avatar",
+      "tags": ["avatar", "ai", "generator", "visual"],
+      "status": "active"
+    }
+  ]
+}
