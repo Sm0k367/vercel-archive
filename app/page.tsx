@@ -244,8 +244,10 @@ export default function NeuralArchive() {
 
   const handleNodeClick = (id: string) => {
     const node = nodes.find(n => n.id === id);
-    if (node) {
-      setSelectedProject(node.project);
+    if (node && node.project.previewUrl) {
+      window.open(node.project.previewUrl, '_blank', 'noopener,noreferrer');
+    } else if (node) {
+      setSelectedProject(node.project); // Fallback to panel if no preview
     }
   };
 
