@@ -62,7 +62,6 @@ const NeuralNode = ({ node, onClick, isSelected }: { node: Node; onClick: () => 
         color="#ffffff"
         anchorX="center"
         anchorY="middle"
-        font="/fonts/geist-bold.woff"
         outlineWidth={0.02}
         outlineColor="#000000"
       >
