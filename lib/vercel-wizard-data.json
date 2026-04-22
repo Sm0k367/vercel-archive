@@ -9,763 +9,890 @@
       "id": "nextjs",
       "name": "nextjs",
       "preview": "https://sm0k367.com",
-      "github": "https://github.com/Sm0k367/nextjs"
+      "github": "https://github.com/Sm0k367/nextjs",
+      "category": "Landing"
     },
     {
       "id": "sanity-visual-editing-demo",
       "name": "sanity-visual-editing-demo",
       "preview": "https://sanity-visual-editing-demo-ashy.vercel.app",
-      "github": "https://github.com/Sm0k367/sanity-visual-editing-demo"
+      "github": "https://github.com/Sm0k367/sanity-visual-editing-demo",
+      "category": "Experimental"
     },
     {
       "id": "smoken-token",
       "name": "smoken-token",
       "preview": "https://smoken-token.vercel.app",
-      "github": "https://github.com/Sm0k367/SmokenToken"
+      "github": "https://github.com/Sm0k367/SmokenToken",
+      "category": "Visuals"
     },
     {
       "id": "epic-tech-ai",
       "name": "epic-tech-ai",
       "preview": "https://epic-tech-ai.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-tech-ai"
+      "github": "https://github.com/Sm0k367/epic-tech-ai",
+      "category": "AI"
     },
     {
       "id": "tunebot-ai-16zl",
       "name": "tunebot-ai-16zl",
       "preview": "https://tunebot-ai-16zl.vercel.app",
-      "github": "https://github.com/Sm0k367/tunebot-ai"
+      "github": "https://github.com/Sm0k367/tunebot-ai",
+      "category": "Music"
     },
     {
       "id": "epic-magic",
       "name": "epic-magic",
       "preview": "https://epic-magic.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-magic"
+      "github": "https://github.com/Sm0k367/epic-magic",
+      "category": "Landing"
     },
     {
       "id": "grok-magic-chat",
       "name": "grok-magic-chat",
       "preview": "https://grok-magic-chat.vercel.app",
-      "github": "https://github.com/Sm0k367/grok-magic-chat"
+      "github": "https://github.com/Sm0k367/grok-magic-chat",
+      "category": "AI"
     },
     {
       "id": "ai-pro",
       "name": "ai-pro",
       "preview": "https://ai-pro-gules.vercel.app",
-      "github": "https://github.com/Sm0k367/ai-pro"
+      "github": "https://github.com/Sm0k367/ai-pro",
+      "category": "AI"
     },
     {
       "id": "midnight-ritual",
       "name": "midnight-ritual",
       "preview": "https://midnight-ritual.vercel.app",
-      "github": "https://github.com/Sm0k367/midnight-ritual"
+      "github": "https://github.com/Sm0k367/midnight-ritual",
+      "category": "Music"
     },
     {
       "id": "eco-avtar",
       "name": "eco-avtar",
       "preview": "https://eco-avtar.vercel.app",
-      "github": "https://github.com/Sm0k367/eco-avatar"
+      "github": "https://github.com/Sm0k367/eco-avatar",
+      "category": "Avatar"
     },
     {
       "id": "eco-avatar-npk1",
       "name": "eco-avatar-npk1",
       "preview": "https://eco-avatar-npk1.vercel.app",
-      "github": "https://github.com/Sm0k367/eco-avatar"
+      "github": "https://github.com/Sm0k367/eco-avatar",
+      "category": "Avatar"
     },
     {
       "id": "gateway",
       "name": "gateway",
       "preview": "https://gateway-alpha-dusky.vercel.app",
-      "github": "https://github.com/Sm0k367/gateway"
+      "github": "https://github.com/Sm0k367/gateway",
+      "category": "Experimental"
     },
     {
       "id": "gate",
       "name": "gate",
       "preview": "https://gate-nine-cyan.vercel.app",
-      "github": "https://github.com/Sm0k367/gate"
+      "github": "https://github.com/Sm0k367/gate",
+      "category": "Experimental"
     },
     {
       "id": "player",
       "name": "player",
       "preview": "https://player-dun.vercel.app",
-      "github": "https://github.com/Sm0k367/player"
+      "github": "https://github.com/Sm0k367/player",
+      "category": "Streaming"
     },
     {
       "id": "g-cloud",
       "name": "g-cloud",
       "preview": "https://g-cloud.vercel.app",
-      "github": "https://github.com/Sm0k367/g-cloud"
+      "github": "https://github.com/Sm0k367/g-cloud",
+      "category": "Experimental"
     },
     {
       "id": "gate-keeper",
       "name": "gate-keeper",
       "preview": "https://gate-keeper-rouge.vercel.app",
-      "github": "https://github.com/Sm0k367/gate-keeper"
+      "github": "https://github.com/Sm0k367/gate-keeper",
+      "category": "Experimental"
     },
     {
       "id": "music-vault",
       "name": "music-vault",
       "preview": "https://music-vault-eta.vercel.app",
-      "github": "https://github.com/Sm0k367/music-vault"
+      "github": "https://github.com/Sm0k367/music-vault",
+      "category": "Music"
     },
     {
       "id": "dj-os-2",
       "name": "dj-os-2",
       "preview": "https://dj-os-2.vercel.app",
-      "github": "https://github.com/Sm0k367/dj-os"
+      "github": "https://github.com/Sm0k367/dj-os",
+      "category": "Music"
     },
     {
       "id": "dj-os-1",
       "name": "dj-os-1",
       "preview": "https://dj-os-1.vercel.app",
-      "github": "https://github.com/Sm0k367/dj-os"
+      "github": "https://github.com/Sm0k367/dj-os",
+      "category": "Music"
     },
     {
       "id": "dj-os-9dk1",
       "name": "dj-os-9dk1",
       "preview": "https://dj-os-9dk1.vercel.app",
-      "github": "https://github.com/Sm0k367/dj-os"
+      "github": "https://github.com/Sm0k367/dj-os",
+      "category": "Music"
     },
     {
       "id": "dj-os",
       "name": "dj-os",
       "preview": "https://dj-os.vercel.app",
-      "github": "https://github.com/Sm0k367/dj-os"
+      "github": "https://github.com/Sm0k367/dj-os",
+      "category": "Music"
     },
     {
       "id": "aigent-zab1",
       "name": "aigent-zab1",
       "preview": "https://aigent-zab1.vercel.app",
-      "github": "https://github.com/Sm0k367/aigent"
+      "github": "https://github.com/Sm0k367/aigent",
+      "category": "AI"
     },
     {
       "id": "stream",
       "name": "stream",
       "preview": "https://stream-psi-three.vercel.app",
-      "github": "https://github.com/Sm0k367/stream"
+      "github": "https://github.com/Sm0k367/stream",
+      "category": "Streaming"
     },
     {
       "id": "stream-s1yx",
       "name": "stream-s1yx",
       "preview": "https://stream-s1yx.vercel.app",
-      "github": "https://github.com/Sm0k367/stream"
+      "github": "https://github.com/Sm0k367/stream",
+      "category": "Streaming"
     },
     {
       "id": "aigent",
       "name": "aigent",
       "preview": "https://aigent-pi.vercel.app",
-      "github": "https://github.com/Sm0k367/aigent"
+      "github": "https://github.com/Sm0k367/aigent",
+      "category": "AI"
     },
     {
       "id": "comfy-pixio-api",
       "name": "comfy-pixio-api",
       "preview": "https://comfy-pixio-api.vercel.app",
-      "github": "https://github.com/Sm0k367/comfy-pixio-api"
+      "github": "https://github.com/Sm0k367/comfy-pixio-api",
+      "category": "Visuals"
     },
     {
       "id": "stream-u1l6",
       "name": "stream-u1l6",
       "preview": "https://stream-u1l6.vercel.app",
-      "github": "https://github.com/Sm0k367/stream"
+      "github": "https://github.com/Sm0k367/stream",
+      "category": "Streaming"
     },
     {
       "id": "1234epic",
       "name": "1234epic",
       "preview": "https://1234epic.vercel.app",
-      "github": "https://github.com/Sm0k367/stream"
+      "github": "https://github.com/Sm0k367/stream",
+      "category": "Streaming"
     },
     {
       "id": "stream1",
       "name": "stream1",
       "preview": "https://stream1-rho.vercel.app",
-      "github": "https://github.com/Sm0k367/stream"
+      "github": "https://github.com/Sm0k367/stream",
+      "category": "Streaming"
     },
     {
       "id": "stream-2y5i",
       "name": "stream-2y5i",
       "preview": "https://stream-2y5i.vercel.app",
-      "github": "https://github.com/Sm0k367/stream"
+      "github": "https://github.com/Sm0k367/stream",
+      "category": "Streaming"
     },
     {
       "id": "stream-at5o",
       "name": "stream-at5o",
       "preview": "https://stream-at5o.vercel.app",
-      "github": "https://github.com/Sm0k367/stream"
+      "github": "https://github.com/Sm0k367/stream",
+      "category": "Streaming"
     },
     {
       "id": "dj-smoke-stream",
       "name": "dj-smoke-stream",
       "preview": "https://dj-smoke-stream.vercel.app",
-      "github": "https://github.com/Sm0k367/dj-smoke-stream"
+      "github": "https://github.com/Sm0k367/dj-smoke-stream",
+      "category": "Music"
     },
     {
       "id": "epictech",
       "name": "epictech",
       "preview": "https://epictech-tau.vercel.app",
-      "github": "https://github.com/Sm0k367/epictech"
+      "github": "https://github.com/Sm0k367/epictech",
+      "category": "Landing"
     },
     {
       "id": "ai-lounge-after-dark-v2-behv",
       "name": "ai-lounge-after-dark-v2-behv",
       "preview": "https://ai-lounge-after-dark-v2-behv.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-v1"
+      "github": "https://github.com/Sm0k367/epic-v1",
+      "category": "AI"
     },
     {
       "id": "stream-fq5f",
       "name": "stream-fq5f",
       "preview": "https://stream-fq5f.vercel.app",
-      "github": "https://github.com/Sm0k367/stream"
+      "github": "https://github.com/Sm0k367/stream",
+      "category": "Streaming"
     },
     {
       "id": "stream1111",
       "name": "stream1111",
       "preview": "https://stream1111.vercel.app",
-      "github": "https://github.com/Sm0k367/stream"
+      "github": "https://github.com/Sm0k367/stream",
+      "category": "Streaming"
     },
     {
       "id": "epictech-v1",
       "name": "epictech-v1",
       "preview": "https://epictech-v1.vercel.app",
-      "github": "https://github.com/Sm0k367/epictech-v1"
+      "github": "https://github.com/Sm0k367/epictech-v1",
+      "category": "Landing"
     },
     {
       "id": "epictech-army",
       "name": "epictech-army",
       "preview": "https://epictech-army.vercel.app",
-      "github": "https://github.com/Sm0k367/epictech-army"
+      "github": "https://github.com/Sm0k367/epictech-army",
+      "category": "AI"
     },
     {
       "id": "vidpage1",
       "name": "vidpage1",
       "preview": "https://vidpage1.vercel.app",
-      "github": "https://github.com/Sm0k367/vidpage1"
+      "github": "https://github.com/Sm0k367/vidpage1",
+      "category": "Visuals"
     },
     {
       "id": "epic-tech-ai-digital-backpack-v2",
       "name": "epic-tech-ai-digital-backpack-v2",
       "preview": "https://epic-tech-ai-digital-backpack-v2.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-tech-ai-digital-backpack"
+      "github": "https://github.com/Sm0k367/epic-tech-ai-digital-backpack",
+      "category": "Visuals"
     },
     {
       "id": "epic-tech-ai-digital-backpack",
       "name": "epic-tech-ai-digital-backpack",
       "preview": "https://epic-tech-ai-digital-backpack.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-tech-ai-digital-backpack"
+      "github": "https://github.com/Sm0k367/epic-tech-ai-digital-backpack",
+      "category": "Visuals"
     },
     {
       "id": "tunebot-ai-ash2",
       "name": "tunebot-ai-ash2",
       "preview": "https://tunebot-ai-ash2.vercel.app",
-      "github": "https://github.com/Sm0k367/tunebot-ai"
+      "github": "https://github.com/Sm0k367/tunebot-ai",
+      "category": "Music"
     },
     {
       "id": "epic-landing",
       "name": "epic-landing",
       "preview": "https://epic-landing-xi.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-landing"
+      "github": "https://github.com/Sm0k367/epic-landing",
+      "category": "Landing"
     },
     {
       "id": "tunebot-ai-594d",
       "name": "tunebot-ai-594d",
       "preview": "https://tunebot-ai-594d.vercel.app",
-      "github": "https://github.com/Sm0k367/tunebot-ai"
+      "github": "https://github.com/Sm0k367/tunebot-ai",
+      "category": "Music"
     },
     {
       "id": "tunebot-ai",
       "name": "tunebot-ai",
       "preview": "https://tunebot-ai.vercel.app",
-      "github": "https://github.com/Sm0k367/tunebot-ai"
+      "github": "https://github.com/Sm0k367/tunebot-ai",
+      "category": "Music"
     },
     {
       "id": "pixal-talev1",
       "name": "pixal-talev1",
       "preview": "https://pixal-talev1.vercel.app",
-      "github": "https://github.com/Sm0k367/pixal-talev1"
+      "github": "https://github.com/Sm0k367/pixal-talev1",
+      "category": "Visuals"
     },
     {
       "id": "sub-swarm",
       "name": "sub-swarm",
       "preview": "https://sub-swarm.vercel.app",
-      "github": "https://github.com/Sm0k367/sub-swarm"
+      "github": "https://github.com/Sm0k367/sub-swarm",
+      "category": "AI"
     },
     {
       "id": "wtf",
       "name": "wtf",
       "preview": "https://wtf-drab.vercel.app",
-      "github": "https://github.com/Sm0k367/wtf"
+      "github": "https://github.com/Sm0k367/wtf",
+      "category": "Experimental"
     },
     {
       "id": "pixal-tale",
       "name": "pixal-tale",
       "preview": "https://pixal-tale.vercel.app",
-      "github": "https://github.com/Sm0k367/pixal-tale"
+      "github": "https://github.com/Sm0k367/pixal-tale",
+      "category": "Visuals"
     },
     {
       "id": "homeowner1",
       "name": "homeowner1",
       "preview": "https://homeowner1-beryl.vercel.app",
-      "github": "https://github.com/Sm0k367/homeowner"
+      "github": "https://github.com/Sm0k367/homeowner",
+      "category": "Landing"
     },
     {
       "id": "homeowners",
       "name": "homeowners",
       "preview": "https://homeowners-rho.vercel.app",
-      "github": "https://github.com/Sm0k367/homeowner"
+      "github": "https://github.com/Sm0k367/homeowner",
+      "category": "Landing"
     },
     {
       "id": "homeowner",
       "name": "homeowner",
       "preview": "https://homeowner-three.vercel.app",
-      "github": "https://github.com/Sm0k367/homeowner"
+      "github": "https://github.com/Sm0k367/homeowner",
+      "category": "Landing"
     },
     {
       "id": "stream-syla",
       "name": "stream-syla",
       "preview": "https://stream-syla.vercel.app",
-      "github": "https://github.com/Sm0k367/stream"
+      "github": "https://github.com/Sm0k367/stream",
+      "category": "Streaming"
     },
     {
       "id": "dj-os-9",
       "name": "dj-os-9",
       "preview": "https://dj-os-9.vercel.app",
-      "github": "https://github.com/Sm0k367/dj-os"
+      "github": "https://github.com/Sm0k367/dj-os",
+      "category": "Music"
     },
     {
       "id": "dj-os-sm35",
       "name": "dj-os-sm35",
       "preview": "https://dj-os-sm35.vercel.app",
-      "github": "https://github.com/Sm0k367/dj-os"
+      "github": "https://github.com/Sm0k367/dj-os",
+      "category": "Music"
     },
     {
       "id": "epic-tech-ai-interactive",
       "name": "epic-tech-ai-interactive",
       "preview": "https://epic-tech-ai-interactive.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-tech-ai-interactive"
+      "github": "https://github.com/Sm0k367/epic-tech-ai-interactive",
+      "category": "AI"
     },
     {
       "id": "aigent-zrxo",
       "name": "aigent-zrxo",
       "preview": "https://aigent-zrxo.vercel.app",
-      "github": "https://github.com/Sm0k367/video"
+      "github": "https://github.com/Sm0k367/video",
+      "category": "Visuals"
     },
     {
       "id": "stream-cuhp",
       "name": "stream-cuhp",
       "preview": "https://stream-cuhp.vercel.app",
-      "github": "https://github.com/Sm0k367/dark"
+      "github": "https://github.com/Sm0k367/dark",
+      "category": "Streaming"
     },
     {
       "id": "trading-ecosystem",
       "name": "trading-ecosystem",
       "preview": "https://trading-ecosystem.vercel.app",
-      "github": "https://github.com/Sm0k367/trading-ecosystem"
+      "github": "https://github.com/Sm0k367/trading-ecosystem",
+      "category": "Visuals"
     },
     {
       "id": "test1",
       "name": "test1",
       "preview": "https://test1-alpha-rose-49.vercel.app",
-      "github": "https://github.com/Sm0k367/test1"
+      "github": "https://github.com/Sm0k367/test1",
+      "category": "Experimental"
     },
     {
       "id": "gallery",
       "name": "gallery",
       "preview": "https://gallery-iota-plum.vercel.app",
-      "github": "https://github.com/Sm0k367/gallery"
+      "github": "https://github.com/Sm0k367/gallery",
+      "category": "Visuals"
     },
     {
       "id": "smoke-stream",
       "name": "smoke-stream",
       "preview": "https://smoke-stream.vercel.app",
-      "github": "https://github.com/Sm0k367/dj-smoke-stream"
+      "github": "https://github.com/Sm0k367/dj-smoke-stream",
+      "category": "Music"
     },
     {
       "id": "eco-avatar-gb8f",
       "name": "eco-avatar-gb8f",
       "preview": "https://eco-avatar-gb8f.vercel.app",
-      "github": "https://github.com/Sm0k367/eco-avatar"
+      "github": "https://github.com/Sm0k367/eco-avatar",
+      "category": "Avatar"
     },
     {
       "id": "eco-avatar-znfx",
       "name": "eco-avatar-znfx",
       "preview": "https://eco-avatar-znfx.vercel.app",
-      "github": "https://github.com/Sm0k367/eco-avatar"
+      "github": "https://github.com/Sm0k367/eco-avatar",
+      "category": "Avatar"
     },
     {
       "id": "eco-avaar",
       "name": "eco-avaar",
       "preview": "https://eco-avaar.vercel.app",
-      "github": "https://github.com/Sm0k367/eco-avatar"
+      "github": "https://github.com/Sm0k367/eco-avatar",
+      "category": "Avatar"
     },
     {
       "id": "eco-avatar",
       "name": "eco-avatar",
       "preview": "https://eco-avatar.vercel.app",
-      "github": "https://github.com/Sm0k367/eco-avatar"
+      "github": "https://github.com/Sm0k367/eco-avatar",
+      "category": "Avatar"
     },
     {
       "id": "avatar-tbzs",
       "name": "avatar-tbzs",
       "preview": "https://avatar-tbzs.vercel.app",
-      "github": "https://github.com/Sm0k367/avatar"
+      "github": "https://github.com/Sm0k367/avatar",
+      "category": "Avatar"
     },
     {
       "id": "epic-vatars",
       "name": "epic-vatars",
       "preview": "https://epic-vatars.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-avatar"
+      "github": "https://github.com/Sm0k367/epic-avatar",
+      "category": "Avatar"
     },
     {
       "id": "epic-vatar",
       "name": "epic-vatar",
       "preview": "https://epic-vatar.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-avatar"
+      "github": "https://github.com/Sm0k367/epic-avatar",
+      "category": "Avatar"
     },
     {
       "id": "epicaibottar",
       "name": "epicaibottar",
       "preview": "https://epicaibottar.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-avatar"
+      "github": "https://github.com/Sm0k367/epic-avatar",
+      "category": "Avatar"
     },
     {
       "id": "epicaibot",
       "name": "epicaibot",
       "preview": "https://epicaibot.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-avatar"
+      "github": "https://github.com/Sm0k367/epic-avatar",
+      "category": "Avatar"
     },
     {
       "id": "epicai",
       "name": "epicai",
       "preview": "https://epicai-psi.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-avatar"
+      "github": "https://github.com/Sm0k367/epic-avatar",
+      "category": "AI"
     },
     {
       "id": "epicaiavatar",
       "name": "epicaiavatar",
       "preview": "https://epicaiavatar.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-avatar"
+      "github": "https://github.com/Sm0k367/epic-avatar",
+      "category": "Avatar"
     },
     {
       "id": "epicavatar",
       "name": "epicavatar",
       "preview": "https://epicavatar.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-avatar"
+      "github": "https://github.com/Sm0k367/epic-avatar",
+      "category": "Avatar"
     },
     {
       "id": "avatar",
       "name": "avatar",
       "preview": "https://avatar-psi-taupe.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-avatar"
+      "github": "https://github.com/Sm0k367/epic-avatar",
+      "category": "Avatar"
     },
     {
       "id": "epic-avatar",
       "name": "epic-avatar",
       "preview": "https://epic-avatar-seven.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-avatar"
+      "github": "https://github.com/Sm0k367/epic-avatar",
+      "category": "Avatar"
     },
     {
       "id": "eco-3edk",
       "name": "eco-3edk",
       "preview": "https://eco-3edk.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-avatar"
+      "github": "https://github.com/Sm0k367/epic-avatar",
+      "category": "Avatar"
     },
     {
       "id": "eco",
       "name": "eco",
       "preview": "https://eco-five-pied.vercel.app",
-      "github": "https://github.com/Sm0k367/eco"
+      "github": "https://github.com/Sm0k367/eco",
+      "category": "Experimental"
     },
     {
       "id": "sm0k367-ai-images",
       "name": "sm0k367-ai-images",
       "preview": "https://sm0k367-ai-images.vercel.app",
-      "github": "https://github.com/Sm0k367/sm0k367-ai-images"
+      "github": "https://github.com/Sm0k367/sm0k367-ai-images",
+      "category": "Visuals"
     },
     {
       "id": "ai-lounge-after-dark",
       "name": "ai-lounge-after-dark",
       "preview": "https://ai-lounge-after-dark.vercel.app",
-      "github": "https://github.com/Sm0k367/ai-lounge-after-dark"
+      "github": "https://github.com/Sm0k367/ai-lounge-after-dark",
+      "category": "AI"
     },
     {
       "id": "epic_bolt",
       "name": "epic_bolt",
       "preview": "https://epicbolt.vercel.app",
-      "github": "https://github.com/Sm0k367/4"
+      "github": "https://github.com/Sm0k367/4",
+      "category": "Experimental"
     },
     {
       "id": "smokestream-ai-studio",
       "name": "smokestream-ai-studio",
       "preview": "https://smokestream-ai-studio.vercel.app",
-      "github": "https://github.com/Sm0k367/smokestream-ai-studio"
+      "github": "https://github.com/Sm0k367/smokestream-ai-studio",
+      "category": "AI"
     },
     {
       "id": "4",
       "name": "4",
       "preview": "https://4-ten-mu.vercel.app",
-      "github": "https://github.com/Sm0k367/4"
+      "github": "https://github.com/Sm0k367/4",
+      "category": "Experimental"
     },
     {
       "id": "oh",
       "name": "oh",
       "preview": "https://oh-zeta.vercel.app",
-      "github": "https://github.com/Sm0k367/oh"
+      "github": "https://github.com/Sm0k367/oh",
+      "category": "Experimental"
     },
     {
       "id": "portals-v2",
       "name": "portals-v2",
       "preview": "https://portals-v2.vercel.app",
-      "github": "https://github.com/Sm0k367/storybook-of-portals"
+      "github": "https://github.com/Sm0k367/storybook-of-portals",
+      "category": "Portal"
     },
     {
       "id": "portals",
       "name": "portals",
       "preview": "https://portals-theta.vercel.app",
-      "github": "https://github.com/Sm0k367/portals"
+      "github": "https://github.com/Sm0k367/portals",
+      "category": "Portal"
     },
     {
       "id": "epic-portal",
       "name": "epic-portal",
       "preview": "https://epic-portal.vercel.app",
-      "github": "https://github.com/Sm0k367/portals"
+      "github": "https://github.com/Sm0k367/portals",
+      "category": "Portal"
     },
     {
       "id": "portal",
       "name": "portal",
       "preview": "https://portal-three-ochre.vercel.app",
-      "github": "https://github.com/Sm0k367/portals"
+      "github": "https://github.com/Sm0k367/portals",
+      "category": "Portal"
     },
     {
       "id": "remote-z996",
       "name": "remote-z996",
       "preview": "https://remote-z996.vercel.app",
-      "github": "https://github.com/Sm0k367/remote"
+      "github": "https://github.com/Sm0k367/remote",
+      "category": "Experimental"
     },
     {
       "id": "promptstudio",
       "name": "promptstudio",
       "preview": "https://promptstudio-tau.vercel.app",
-      "github": "https://github.com/Sm0k367/promptstudio"
+      "github": "https://github.com/Sm0k367/promptstudio",
+      "category": "AI"
     },
     {
       "id": "website",
       "name": "website",
       "preview": "https://website-eight-beige-18.vercel.app",
-      "github": "https://github.com/Sm0k367/website"
+      "github": "https://github.com/Sm0k367/website",
+      "category": "Landing"
     },
     {
       "id": "epictech-site",
       "name": "epictech-site",
       "preview": "https://epictech-site.vercel.app",
-      "github": "https://github.com/Sm0k367/epictech-site"
+      "github": "https://github.com/Sm0k367/epictech-site",
+      "category": "Landing"
     },
     {
       "id": "a1-wusd",
       "name": "a1-wusd",
       "preview": "https://a1-wusd.vercel.app",
-      "github": "https://github.com/Sm0k367/epictech-site"
+      "github": "https://github.com/Sm0k367/epictech-site",
+      "category": "Landing"
     },
     {
       "id": "a1",
       "name": "a1",
       "preview": "https://a1-ecru.vercel.app",
-      "github": "https://github.com/Sm0k367/a1"
+      "github": "https://github.com/Sm0k367/a1",
+      "category": "Experimental"
     },
     {
       "id": "site",
       "name": "site",
       "preview": "https://site-sigma-ashy.vercel.app",
-      "github": "https://github.com/Sm0k367/site"
+      "github": "https://github.com/Sm0k367/site",
+      "category": "Landing"
     },
     {
       "id": "site-page",
       "name": "site-page",
       "preview": "https://site-page-tau.vercel.app",
-      "github": "https://github.com/Sm0k367/site"
+      "github": "https://github.com/Sm0k367/site",
+      "category": "Landing"
     },
     {
       "id": "site-psd3",
       "name": "site-psd3",
       "preview": "https://site-psd3.vercel.app",
-      "github": "https://github.com/Sm0k367/site"
+      "github": "https://github.com/Sm0k367/site",
+      "category": "Landing"
     },
     {
       "id": "epic-tech-ai-landing",
       "name": "epic-tech-ai-landing",
       "preview": "https://epic-tech-ai-landing.vercel.app",
-      "github": "https://github.com/Sm0k367/site"
+      "github": "https://github.com/Sm0k367/site",
+      "category": "Landing"
     },
     {
       "id": "epic-site",
       "name": "epic-site",
       "preview": "https://epic-site-kohl.vercel.app",
-      "github": "https://github.com/Sm0k367/site"
+      "github": "https://github.com/Sm0k367/site",
+      "category": "Landing"
     },
     {
       "id": "epicsite",
       "name": "epicsite",
       "preview": "https://epicsite.vercel.app",
-      "github": "https://github.com/Sm0k367/site"
+      "github": "https://github.com/Sm0k367/site",
+      "category": "Landing"
     },
     {
       "id": "intercom",
       "name": "intercom",
       "preview": "https://intercom-bay.vercel.app",
-      "github": "https://github.com/Sm0k367/intercom"
+      "github": "https://github.com/Sm0k367/intercom",
+      "category": "Experimental"
     },
     {
       "id": "lyric-visualizer-v2-0",
       "name": "lyric-visualizer-v2-0",
       "preview": "https://lyric-visualizer-v2-0.vercel.app",
-      "github": "https://github.com/Sm0k367/lyric-visualizer-v2.0"
+      "github": "https://github.com/Sm0k367/lyric-visualizer-v2.0",
+      "category": "Music"
     },
     {
       "id": "epic-help",
       "name": "epic-help",
       "preview": "https://epic-help.vercel.app",
-      "github": "https://github.com/Sm0k367/help"
+      "github": "https://github.com/Sm0k367/help",
+      "category": "Landing"
     },
     {
       "id": "remote",
       "name": "remote",
       "preview": "https://remote-delta.vercel.app",
-      "github": "https://github.com/Sm0k367/remote"
+      "github": "https://github.com/Sm0k367/remote",
+      "category": "Experimental"
     },
     {
       "id": "storybook-of-portals",
       "name": "storybook-of-portals",
       "preview": "https://storybook-of-portals.vercel.app",
-      "github": "https://github.com/Sm0k367/storybook-of-portals"
+      "github": "https://github.com/Sm0k367/storybook-of-portals",
+      "category": "Portal"
     },
     {
       "id": "remote-rescue-dtp6",
       "name": "remote-rescue-dtp6",
       "preview": "https://remote-rescue-dtp6.vercel.app",
-      "github": "https://github.com/Sm0k367/remote-rescue"
+      "github": "https://github.com/Sm0k367/remote-rescue",
+      "category": "Experimental"
     },
     {
       "id": "help",
       "name": "help",
       "preview": "https://help-zeta-two.vercel.app",
-      "github": "https://github.com/Sm0k367/help"
+      "github": "https://github.com/Sm0k367/help",
+      "category": "Landing"
     },
     {
       "id": "dream",
       "name": "dream",
       "preview": "https://dream-woad-three.vercel.app",
-      "github": "https://github.com/Sm0k367/dream"
+      "github": "https://github.com/Sm0k367/dream",
+      "category": "Visuals"
     },
     {
       "id": "remote-rescue",
       "name": "remote-rescue",
       "preview": "https://remote-rescue.vercel.app",
-      "github": "https://github.com/Sm0k367/remote-rescue"
+      "github": "https://github.com/Sm0k367/remote-rescue",
+      "category": "Experimental"
     },
     {
       "id": "landing-jce5",
       "name": "landing-jce5",
       "preview": "https://landing-jce5.vercel.app",
-      "github": "https://github.com/Sm0k367/tvremote"
+      "github": "https://github.com/Sm0k367/tvremote",
+      "category": "Landing"
     },
     {
       "id": "epic",
       "name": "epic",
       "preview": "https://epic-omega-five.vercel.app",
-      "github": "https://github.com/Sm0k367/epicwebsite"
+      "github": "https://github.com/Sm0k367/epicwebsite",
+      "category": "Landing"
     },
     {
       "id": "landhere",
       "name": "landhere",
       "preview": "https://landhere.vercel.app",
-      "github": "https://github.com/Sm0k367/landing"
+      "github": "https://github.com/Sm0k367/landing",
+      "category": "Landing"
     },
     {
       "id": "landing",
       "name": "landing",
       "preview": "https://landing-cyan-zeta.vercel.app",
-      "github": "https://github.com/Sm0k367/landing"
+      "github": "https://github.com/Sm0k367/landing",
+      "category": "Landing"
     },
     {
       "id": "homeguard",
       "name": "homeguard",
       "preview": "https://homeguard-nine.vercel.app",
-      "github": "https://github.com/Sm0k367/homeguardpro"
+      "github": "https://github.com/Sm0k367/homeguardpro",
+      "category": "Landing"
     },
     {
       "id": "anarrative",
       "name": "anarrative",
       "preview": "https://anarrative.vercel.app",
-      "github": "https://github.com/Sm0k367/narrative"
+      "github": "https://github.com/Sm0k367/narrative",
+      "category": "Landing"
     },
     {
       "id": "awake",
       "name": "awake",
       "preview": "https://awake-virid.vercel.app",
-      "github": "https://github.com/Sm0k367/awake"
+      "github": "https://github.com/Sm0k367/awake",
+      "category": "Experimental"
     },
     {
       "id": "narrative",
       "name": "narrative",
       "preview": "https://narrative-psi.vercel.app",
-      "github": "https://github.com/Sm0k367/narrative"
+      "github": "https://github.com/Sm0k367/narrative",
+      "category": "Landing"
     },
     {
       "id": "narrative2",
       "name": "narrative2",
       "preview": "https://narrative2.vercel.app",
-      "github": "https://github.com/Sm0k367/narrative"
+      "github": "https://github.com/Sm0k367/narrative",
+      "category": "Landing"
     },
     {
       "id": "narrative1",
       "name": "narrative1",
       "preview": "https://narrative1.vercel.app",
-      "github": "https://github.com/Sm0k367/narrative"
+      "github": "https://github.com/Sm0k367/narrative",
+      "category": "Landing"
     },
     {
       "id": "narrative3",
       "name": "narrative3",
       "preview": "https://narrative3.vercel.app",
-      "github": "https://github.com/Sm0k367/narrative"
+      "github": "https://github.com/Sm0k367/narrative",
+      "category": "Landing"
     },
     {
       "id": "homeguardpro",
       "name": "homeguardpro",
       "preview": "https://homeguardpro.vercel.app",
-      "github": "https://github.com/Sm0k367/homeguardpro"
+      "github": "https://github.com/Sm0k367/homeguardpro",
+      "category": "Landing"
     },
     {
       "id": "epictech-website",
       "name": "epictech-website",
       "preview": "https://epictech-website.vercel.app",
-      "github": "https://github.com/Sm0k367/epictech-website"
+      "github": "https://github.com/Sm0k367/epictech-website",
+      "category": "Landing"
     },
     {
       "id": "epic-tech-ai-engineering",
       "name": "epic-tech-ai-engineering",
       "preview": "https://epic-tech-ai-engineering.vercel.app",
-      "github": "https://github.com/Sm0k367/epic-tech-ai-engineering"
+      "github": "https://github.com/Sm0k367/epic-tech-ai-engineering",
+      "category": "AI"
     },
     {
       "id": "smokestream-images",
       "name": "smokestream-images",
       "preview": "https://smokestream-images.vercel.app",
-      "github": "https://github.com/Sm0k367/sm0k367-ai-images"
+      "github": "https://github.com/Sm0k367/sm0k367-ai-images",
+      "category": "Visuals"
     },
     {
       "id": "nextjs-subscription-payments",
       "name": "nextjs-subscription-payments",
       "preview": "https://nextjs-subscription-payments-self-sigma.vercel.app",
-      "github": "https://github.com/Sm0k367/nextjs-subscription-payments"
+      "github": "https://github.com/Sm0k367/nextjs-subscription-payments",
+      "category": "Experimental"
     },
     {
       "id": "smoke-stream42-o",
       "name": "smoke-stream42-o",
       "preview": "https://smoke-stream42-o.vercel.app",
-      "github": "https://github.com/Sm0k367/SmokeStream42O"
+      "github": "https://github.com/Sm0k367/SmokeStream42O",
+      "category": "Music"
     },
     {
       "id": "sm0k367ai-nextjs-chat",
       "name": "sm0k367ai-nextjs-chat",
       "preview": "https://sm0k367ai-nextjs-chat-cyan.vercel.app",
-      "github": "https://github.com/Sm0k367/sm0k367ai-nextjs-chat"
+      "github": "https://github.com/Sm0k367/sm0k367ai-nextjs-chat",
+      "category": "AI"
     }
   ]
 }

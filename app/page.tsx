@@ -28,9 +28,21 @@ const NeuralNode = ({ node, onClick, isSelected }: { node: Node; onClick: () => 
     }
   });
 
-  const color = node.project.category === 'AI' ? '#a855f7' : 
-                node.project.category === 'Music' ? '#22d3ee' : 
-                node.project.category === 'Avatar' ? '#ec4899' : '#f472b6';
+  const getNodeColor = (category: string) => {
+    switch (category) {
+      case 'AI': return '#a855f7';
+      case 'Music': return '#22d3ee';
+      case 'Avatar': return '#ec4899';
+      case 'Visuals': return '#f472b6';
+      case 'Streaming': return '#3b82f6';
+      case 'Landing': return '#10b981';
+      case 'Portal': return '#8b5cf6';
+      case 'Experimental': return '#f59e0b';
+      default: return '#c4b5fd';
+    }
+  };
+
+  const color = getNodeColor(node.project.category || 'Experimental');
 
   return (
     <group ref={meshRef} onClick={onClick}>
