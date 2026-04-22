@@ -171,6 +171,7 @@ export default function NeuralArchive() {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioContext, setAudioContext] = useState<AudioContext | null>(null);
+  const [showArchivist, setShowArchivist] = useState(false); // Collapsed by default so it doesn't block the 3D view
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Create nodes with 3D positioning and connections based on shared repos/categories
@@ -421,21 +422,42 @@ export default function NeuralArchive() {
           <div className="text-emerald-400">127 NODES ONLINE • ALL DEPLOYS LIVE</div>
         </div>
 
-        {/* Archivist Lore Panel */}
-        <div className="absolute top-8 right-8 w-80 glass rounded-3xl p-6 text-sm border border-purple-500/30 pointer-events-auto">
+        {/* Archivist Lore Panel (Toggleable) */}
+        <motion.div 
+          initial={{ opacity: 0.9, x: 20 }}
+          animate={{ 
+            opacity: showArchivist ? 0.95 : 0.3, 
+            x: showArchivist ? 0 : 280,
+            width: showArchivist ? 320 : 60 
+          }}
+          className="absolute top-8 right-8 glass rounded-3xl p-6 text-sm border border-purple-500/30 pointer-events-auto overflow-hidden cursor-pointer"
+          onClick={() => setShowArchivist(!showArchivist)}
+          whileHover={{ scale: 1.02 }}
+        >
           <div className="uppercase text-purple-400 text-xs tracking-widest mb-4 flex items-center gap-2">
             <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
             THE ARCHIVIST
+            <span className="ml-auto text-[10px] opacity-50">{showArchivist ? 'HIDE' : 'LORE'}</span>
           </div>
-          <div className="text-white/80 leading-relaxed text-[13px]">
-            {selectedProject 
-              ? `This node belongs to the ${selectedProject.category || 'Experimental'} cluster. It is one of many iterations exploring the same concept. The creative lineage is strong here.`
-              : "You are floating inside the complete creative output of Sm0k367. 127 experiments. One continuous mind. The connections you see are the iteration history — shared codebases, evolving aesthetics, recurring obsessions."}
-          </div>
-          <div className="mt-6 text-[10px] text-purple-400/70">
-            The archive is alive. It remembers everything.
-          </div>
-        </div>
+          
+          <AnimatePresence>
+            {showArchivist && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="text-white/80 leading-relaxed text-[13px] overflow-hidden"
+              >
+                {selectedProject 
+                  ? `This node belongs to the ${selectedProject.category || 'Experimental'} cluster. It is one of many iterations exploring the same concept. The creative lineage is strong here.`
+                  : "You are floating inside the complete creative output of Sm0k367. 127 experiments. One continuous mind. The connections you see are the iteration history — shared codebases, evolving aesthetics, recurring obsessions."}
+                <div className="mt-6 text-[10px] text-purple-400/70 border-t border-purple-500/20 pt-4">
+                  The archive is alive. It remembers everything.
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
       </div>
 
       {/* Background ambient audio (silent until toggled) */}
