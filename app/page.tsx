@@ -1,307 +1,434 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
-import { projects, categories, Project } from '../lib/projects';
+import React, { useState, useMemo, useRef, useEffect, Suspense } from 'react';
+import { projects, categories, Project, meta } from '../lib/projects';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { OrbitControls, Text, Sphere, Environment, Float, Stars, Line } from '@react-three/drei';
+import * as THREE from 'three';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Play, Pause, ExternalLink, Search, X, Volume2, VolumeX } from 'lucide-react';
 
-export default function VercelProjectsDashboard() {
+interface Node {
+  id: string;
+  position: [number, number, number];
+  project: Project;
+  connections: string[];
+}
+
+const NeuralNode = ({ node, onClick, isSelected }: { node: Node; onClick: () => void; isSelected: boolean }) => {
+  const meshRef = useRef<THREE.Group>(null);
+  const glowRef = useRef<THREE.Mesh>(null);
+
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.2;
+    }
+    if (glowRef.current) {
+      glowRef.current.scale.setScalar(1 + Math.sin(state.clock.getElapsedTime() * 3) * 0.1);
+    }
+  });
+
+  const color = node.project.category === 'AI' ? '#a855f7' : 
+                node.project.category === 'Music' ? '#22d3ee' : 
+                node.project.category === 'Avatar' ? '#ec4899' : '#f472b6';
+
+  return (
+    <group ref={meshRef} onClick={onClick}>
+      {/* Core glowing orb */}
+      <Sphere args={[0.8, 32, 32]} position={node.position}>
+        <meshStandardMaterial 
+          color={color} 
+          emissive={color} 
+          emissiveIntensity={isSelected ? 2.5 : 1.2}
+          metalness={0.9}
+          roughness={0.1}
+        />
+      </Sphere>
+
+      {/* Outer glow ring */}
+      <Sphere ref={glowRef} args={[1.4, 32, 32]} position={node.position}>
+        <meshBasicMaterial 
+          color={color} 
+          transparent 
+          opacity={isSelected ? 0.4 : 0.15} 
+          side={THREE.DoubleSide}
+        />
+      </Sphere>
+
+      {/* Project name label */}
+      <Text
+        position={[node.position[0], node.position[1] + 2.2, node.position[2]]}
+        fontSize={0.45}
+        color="#ffffff"
+        anchorX="center"
+        anchorY="middle"
+        font="/fonts/geist-bold.woff"
+        outlineWidth={0.02}
+        outlineColor="#000000"
+      >
+        {node.project.name.length > 12 ? node.project.name.slice(0, 12) + '...' : node.project.name}
+      </Text>
+    </group>
+  );
+};
+
+const ConnectionLines = ({ nodes }: { nodes: Node[] }) => {
+  const lines = useMemo(() => {
+    const lineElements: React.ReactNode[] = [];
+    const connectionSet = new Set<string>();
+
+    nodes.forEach((node, i) => {
+      node.connections.forEach((targetId) => {
+        const target = nodes.find(n => n.id === targetId);
+        if (target && i < nodes.indexOf(target)) {
+          const key = [node.id, target.id].sort().join('-');
+          if (!connectionSet.has(key)) {
+            connectionSet.add(key);
+            lineElements.push(
+              <Line
+                key={key}
+                points={[node.position, target.position]}
+                color="#22d3ee"
+                lineWidth={2}
+                transparent
+                opacity={0.6}
+              />
+            );
+          }
+        }
+      });
+    });
+    return lineElements;
+  }, [nodes]);
+
+  return <>{lines}</>;
+};
+
+const NeuralScene = ({ nodes, onNodeClick, selectedId }: { 
+  nodes: Node[]; 
+  onNodeClick: (id: string) => void; 
+  selectedId: string | null;
+}) => {
+  const { scene } = useThree();
+
+  useEffect(() => {
+    scene.fog = new THREE.Fog(0x0a0a0a, 30, 120);
+  }, [scene]);
+
+  return (
+    <>
+      <ambientLight intensity={0.2} />
+      <pointLight position={[0, 30, 0]} intensity={2} color="#ff00ff" />
+      <pointLight position={[-40, -20, -40]} intensity={1.5} color="#00ffff" />
+      
+      <Stars radius={200} depth={60} count={8000} factor={2} saturation={0} fade speed={0.5} />
+      
+      <Environment preset="night" />
+
+      <ConnectionLines nodes={nodes} />
+
+      {nodes.map((node) => (
+        <NeuralNode 
+          key={node.id} 
+          node={node} 
+          onClick={() => onNodeClick(node.id)}
+          isSelected={selectedId === node.id}
+        />
+      ))}
+
+      {/* Central core */}
+      <Float speed={0.8} rotationIntensity={0.4}>
+        <Sphere args={[3.5, 64, 64]} position={[0, 0, 0]}>
+          <meshStandardMaterial 
+            color="#4f46e5" 
+            emissive="#6366f1" 
+            emissiveIntensity={0.8}
+            metalness={0.3}
+            roughness={0.2}
+            transparent
+            opacity={0.15}
+          />
+        </Sphere>
+      </Float>
+    </>
+  );
+};
+
+export default function NeuralArchive() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState<string>('All');
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [audioContext, setAudioContext] = useState<AudioContext | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const filteredProjects = useMemo(() => {
-    return projects.filter(project => {
-      const matchesSearch = 
-        project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        project.repo.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        project.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+  // Create nodes with 3D positioning and connections based on shared repos/categories
+  const nodes = useMemo(() => {
+    const nodeMap = new Map();
+    const repoGroups = new Map<string, string[]>();
+
+    projects.forEach((project, index) => {
+      const angle = (index / projects.length) * Math.PI * 2;
+      const radius = 25 + Math.random() * 15;
+      const height = (Math.random() - 0.5) * 35;
       
-      const matchesCategory = activeCategory === 'All' || project.category === activeCategory;
+      const position: [number, number, number] = [
+        Math.cos(angle) * radius,
+        height,
+        Math.sin(angle) * radius * 0.8
+      ];
+
+      const node: Node = {
+        id: project.id,
+        position,
+        project,
+        connections: []
+      };
+
+      nodeMap.set(project.id, node);
+
+      // Group by repo for connections (iteration awareness)
+      if (project.repo && project.repo !== 'unknown') {
+        if (!repoGroups.has(project.repo)) repoGroups.set(project.repo, []);
+        repoGroups.get(project.repo)!.push(project.id);
+      }
+    });
+
+    // Add connections for projects that share repos (the "iteration" links)
+    repoGroups.forEach((ids) => {
+      if (ids.length > 1) {
+        for (let i = 0; i < ids.length; i++) {
+          for (let j = i + 1; j < ids.length; j++) {
+            const node1 = nodeMap.get(ids[i]);
+            const node2 = nodeMap.get(ids[j]);
+            if (node1 && node2) {
+              node1.connections.push(ids[j]);
+              node2.connections.push(ids[i]);
+            }
+          }
+        }
+      }
+    });
+
+    return Array.from(nodeMap.values());
+  }, []);
+
+  const filteredNodes = useMemo(() => {
+    if (!searchTerm && activeCategory === 'All') return nodes;
+    
+    return nodes.filter(node => {
+      const p = node.project;
+      const matchesSearch = !searchTerm || 
+        p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (p.description && p.description.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        p.repo.toLowerCase().includes(searchTerm.toLowerCase());
+      
+      const matchesCategory = activeCategory === 'All' || 
+        (p.category && p.category.toLowerCase().includes(activeCategory.toLowerCase()));
       
       return matchesSearch && matchesCategory;
     });
-  }, [searchTerm, activeCategory]);
+  }, [nodes, searchTerm, activeCategory]);
 
-  const stats = {
-    total: projects.length,
-    uniqueRepos: new Set(projects.map(p => p.repo)).size,
-    categories: new Set(projects.map(p => p.category)).size,
-    active: projects.filter(p => p.status === 'active').length,
+  const handleNodeClick = (id: string) => {
+    const node = nodes.find(n => n.id === id);
+    if (node) {
+      setSelectedProject(node.project);
+    }
   };
 
-  const getCategoryColor = (category: string) => {
-    const colors: Record<string, string> = {
-      'AI': 'bg-purple-500/20 text-purple-400 border-purple-500/50',
-      'Music': 'bg-cyan-500/20 text-cyan-400 border-cyan-500/50',
-      'Visuals': 'bg-pink-500/20 text-pink-400 border-pink-500/50',
-      'Streaming': 'bg-blue-500/20 text-blue-400 border-blue-500/50',
-      'Landing': 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50',
-      'Experimental': 'bg-amber-500/20 text-amber-400 border-amber-500/50',
-      'Avatar': 'bg-violet-500/20 text-violet-400 border-violet-500/50',
-      'Portal': 'bg-fuchsia-500/20 text-fuchsia-400 border-fuchsia-500/50',
-    };
-    return colors[category] || 'bg-zinc-500/20 text-zinc-400 border-zinc-500/50';
+  // Audio reactive system
+  const toggleAudio = () => {
+    if (!audioRef.current) {
+      audioRef.current = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'); // Ambient cyberpunk-style track (replace with better one if desired)
+      audioRef.current.loop = true;
+    }
+
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play().catch(console.error);
+    }
+    setIsPlaying(!isPlaying);
   };
 
-  const openLink = (url: string, type: 'preview' | 'github') => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
+  // Initialize audio context for potential reactivity (pulse on beat)
+  useEffect(() => {
+    if (isPlaying && !audioContext) {
+      const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
+      setAudioContext(ctx);
+    }
+  }, [isPlaying]);
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white overflow-hidden">
-      {/* Navbar */}
-      <nav className="glass fixed top-0 left-0 right-0 z-50 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
+    <div className="relative w-full h-screen bg-black overflow-hidden">
+      {/* 3D Neural Network Canvas */}
+      <div className="absolute inset-0">
+        <Canvas
+          camera={{ position: [0, 15, 60], fov: 50 }}
+          gl={{ antialias: true, alpha: true }}
+          style={{ background: '#050505' }}
+        >
+          <Suspense fallback={null}>
+            <NeuralScene 
+              nodes={filteredNodes} 
+              onNodeClick={handleNodeClick} 
+              selectedId={selectedProject?.id || null} 
+            />
+            <OrbitControls 
+              enablePan={true}
+              enableZoom={true}
+              enableRotate={true}
+              minDistance={8}
+              maxDistance={120}
+              autoRotate={!selectedProject}
+              autoRotateSpeed={0.2}
+            />
+          </Suspense>
+        </Canvas>
+      </div>
+
+      {/* HUD Overlay */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Top HUD */}
+        <div className="pointer-events-auto p-8 flex justify-between">
           <div className="flex items-center gap-4">
-            {/* Custom SVG Logo */}
-            <div className="w-9 h-9 flex items-center justify-center">
-              <svg 
-                viewBox="0 0 100 100" 
-                className="w-9 h-9 neon-border rounded-full p-1"
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="50" cy="50" r="38" stroke="#ff00ff" strokeWidth="8" />
-                <path d="M35 40 L50 65 L65 40" stroke="#00ffff" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
-                <circle cx="35" cy="35" r="5" fill="#ff00ff" />
-                <circle cx="65" cy="35" r="5" fill="#00ffff" />
-              </svg>
-            </div>
-            <div>
-              <div className="text-2xl font-bold tracking-tighter neon-text">SM0K367</div>
-              <div className="text-[10px] text-zinc-500 -mt-1 tracking-[3px]">VERCEL ARCHIVE</div>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-purple-500 to-cyan-400 flex items-center justify-center">
+                <span className="text-black text-2xl font-bold">⚡</span>
+              </div>
+              <div>
+                <div className="text-4xl font-bold tracking-tighter text-white neon-text">NEURAL ARCHIVE</div>
+                <div className="text-xs text-cyan-400 tracking-[4px] -mt-1">SM0K367 UNIVERSE v0.1</div>
+              </div>
             </div>
           </div>
-          
-          <div className="flex items-center gap-8 text-sm">
-            <a href="https://github.com/Sm0k367" target="_blank" className="hover:text-[#ff00ff] transition-colors flex items-center gap-1.5">
-              <span>GITHUB</span>
-              <span className="text-xs text-zinc-500">↗</span>
-            </a>
-            <a href="https://vercel.com" target="_blank" className="hover:text-[#00ffff] transition-colors flex items-center gap-1.5">
-              VERCEL
-              <span className="text-xs text-zinc-500">↗</span>
-            </a>
-            <div className="h-3 w-px bg-white/20"></div>
-            <div className="text-xs px-3 py-1 rounded-full border border-white/20 text-emerald-400 flex items-center gap-2">
-              <div className="status-dot"></div>
-              47+ DEPLOYS LIVE
+
+          <div className="flex items-center gap-6 text-sm font-mono text-white/70">
+            <div className="px-5 py-2 glass rounded-3xl border border-white/10">
+              {meta?.totalProjects || projects.length} NODES ACTIVE
+            </div>
+            <div onClick={toggleAudio} className="cursor-pointer flex items-center gap-2 hover:text-white transition-colors">
+              {isPlaying ? <VolumeX size={18} /> : <Volume2 size={18} />}
+              <span className="text-xs">AMBIENT PULSE</span>
             </div>
           </div>
         </div>
-      </nav>
 
-      <div className="pt-24 pb-16 max-w-7xl mx-auto px-8">
-        {/* Hero */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-3xl border border-[#ff00ff]/30 text-xs tracking-widest mb-6 bg-black/60">
-            EXPERIMENTAL ARCHIVE • ITERATIVE CREATION
-          </div>
-          
-          <h1 className="text-7xl md:text-8xl font-bold tracking-tighter mb-6 neon-text leading-none">
-            VERCEL<br />PROJECTS
-          </h1>
-          <p className="max-w-2xl mx-auto text-xl text-zinc-400">
-            A living museum of 50+ Next.js experiments, AI prototypes, 
-            music interfaces, visual playgrounds, and digital rituals by Sm0k367.
-            <span className="block mt-3 text-sm text-zinc-500">From one repo to many realities.</span>
-          </p>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          {[
-            { label: 'TOTAL PROJECTS', value: stats.total.toString().padStart(2, '0') },
-            { label: 'UNIQUE REPOS', value: stats.uniqueRepos.toString().padStart(2, '0') },
-            { label: 'CATEGORIES', value: stats.categories.toString().padStart(2, '0') },
-            { label: 'LIVE PREVIEWS', value: stats.active.toString().padStart(2, '0') },
-          ].map((stat, i) => (
-            <div key={i} className="glass p-6 rounded-3xl neon-border">
-              <div className="text-5xl font-mono font-bold text-[#ff00ff] mb-1 tracking-tighter">{stat.value}</div>
-              <div className="text-xs uppercase tracking-widest text-zinc-500">{stat.label}</div>
+        {/* Search and Filters */}
+        <div className="absolute top-28 left-1/2 -translate-x-1/2 pointer-events-auto flex flex-col items-center gap-4 w-full max-w-2xl px-6">
+          <div className="relative w-full">
+            <div className="absolute left-6 top-1/2 -translate-y-1/2 text-cyan-400">
+              <Search size={20} />
             </div>
-          ))}
-        </div>
-
-        {/* Controls */}
-        <div className="flex flex-col md:flex-row gap-4 mb-10">
-          <div className="flex-1 relative">
             <input
               type="text"
-              placeholder="Search projects, repos, tags... (try 'dj', 'avatar', 'stream', 'grok')"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full glass px-6 py-4 rounded-2xl text-lg placeholder:text-zinc-500 focus:outline-none border border-white/10 focus:border-[#ff00ff]"
+              placeholder="SEARCH THE ARCHIVE... (try 'dj', 'avatar', 'stream', 'grok', 'portal')"
+              className="w-full bg-black/80 border border-white/20 pl-14 pr-6 py-4 rounded-3xl text-lg placeholder:text-white/40 focus:outline-none focus:border-cyan-400 font-mono"
             />
-            {searchTerm && (
-              <button 
-                onClick={() => setSearchTerm('')}
-                className="absolute right-6 top-1/2 -translate-y-1/2 text-xs px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full"
-              >
-                CLEAR
-              </button>
-            )}
           </div>
-          
-          <div className="flex flex-wrap gap-2">
+
+          <div className="flex flex-wrap gap-2 justify-center">
             {categories.map((cat) => (
-              <button
+              <motion.button
                 key={cat}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveCategory(cat)}
-                className={`category-chip px-5 py-2.5 text-sm font-medium rounded-2xl border transition-all whitespace-nowrap ${
+                className={`px-6 py-2 text-xs font-medium rounded-3xl border transition-all ${
                   activeCategory === cat 
-                    ? 'active border-[#ff00ff] text-black bg-[#ff00ff]' 
-                    : 'border-white/10 hover:border-white/40'
+                    ? 'bg-white text-black border-white' 
+                    : 'border-white/30 hover:border-white/60 text-white/70'
                 }`}
               >
                 {cat}
-              </button>
+              </motion.button>
             ))}
           </div>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.length > 0 ? (
-            filteredProjects.map((project) => (
-              <div 
-                key={project.id} 
-                className="project-card glass rounded-3xl overflow-hidden neon-border group cursor-pointer"
-                onClick={() => setSelectedProject(project)}
-              >
-                <div className="h-2 bg-gradient-to-r from-[#ff00ff] via-[#00ffff] to-[#ff00ff]"></div>
-                
-                <div className="p-8">
-                  <div className="flex justify-between items-start mb-6">
-                    <div>
-                      <div className="font-mono text-xs text-zinc-500 mb-1">{project.repo}</div>
-                      <h3 className="text-2xl font-semibold tracking-tight mb-2 group-hover:text-[#ff00ff] transition-colors">
-                        {project.name}
-                      </h3>
-                    </div>
-                    <div className={`text-[10px] px-3 py-1 rounded-full border ${getCategoryColor(project.category)}`}>
-                      {project.category}
-                    </div>
+        {/* Selected Project Holographic Panel */}
+        <AnimatePresence>
+          {selectedProject && (
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 100 }}
+              className="absolute bottom-8 left-1/2 -translate-x-1/2 w-full max-w-2xl pointer-events-auto"
+            >
+              <div className="glass border border-cyan-400/50 rounded-3xl p-8 shadow-2xl">
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <div className="uppercase text-[10px] tracking-[3px] text-cyan-400 mb-1">{selectedProject.category || 'EXPERIMENT'}</div>
+                    <h2 className="text-4xl font-bold text-white tracking-tighter">{selectedProject.name}</h2>
+                    <div className="font-mono text-sm text-white/60 mt-1">{selectedProject.repo}</div>
                   </div>
-                  
-                  <p className="text-zinc-400 text-sm leading-relaxed mb-8 line-clamp-3">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {project.tags.map((tag, index) => (
-                      <span key={index} className="tag">{tag}</span>
-                    ))}
-                  </div>
-                  
-                  <div className="flex gap-3">
-                    <button 
-                      onClick={(e) => { e.stopPropagation(); openLink(project.previewUrl, 'preview'); }}
-                      className="flex-1 bg-white text-black hover:bg-white/90 py-3.5 rounded-2xl text-sm font-semibold flex items-center justify-center gap-2 transition-all active:scale-95"
-                    >
-                      <span>PREVIEW</span>
-                      <span className="text-xs opacity-70">↗</span>
-                    </button>
-                    
-                    <button 
-                      onClick={(e) => { e.stopPropagation(); openLink(project.githubUrl, 'github'); }}
-                      className="flex-1 border border-white/30 hover:bg-white/5 py-3.5 rounded-2xl text-sm font-semibold flex items-center justify-center gap-2 transition-all active:scale-95"
-                    >
-                      GITHUB
-                      <span className="text-xs opacity-70">↗</span>
-                    </button>
-                  </div>
+                  <button onClick={() => setSelectedProject(null)} className="text-white/60 hover:text-white">
+                    <X size={28} />
+                  </button>
                 </div>
-                
-                <div className="px-8 py-4 border-t border-white/10 flex items-center justify-between text-[10px] text-zinc-500 font-mono">
-                  <div>STATUS: <span className="text-emerald-400">LIVE</span></div>
-                  <div className="flex items-center gap-1">
-                    ITERATION 
-                    <div className="w-1.5 h-px bg-white/30 flex-1"></div> 
-                    {Math.floor(Math.random() * 8) + 1}
-                  </div>
+
+                <p className="text-white/80 leading-relaxed mb-8 text-lg">
+                  {selectedProject.description}
+                </p>
+
+                <div className="flex gap-4">
+                  <motion.a
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    href={selectedProject.previewUrl}
+                    target="_blank"
+                    className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 py-5 rounded-2xl font-semibold flex items-center justify-center gap-3 text-lg"
+                  >
+                    OPEN PORTAL <ExternalLink size={22} />
+                  </motion.a>
+                  
+                  <motion.a
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    href={selectedProject.githubUrl}
+                    target="_blank"
+                    className="flex-1 border border-white/40 py-5 rounded-2xl font-semibold flex items-center justify-center gap-3 hover:bg-white/5"
+                  >
+                    VIEW SOURCE <ExternalLink size={22} />
+                  </motion.a>
+                </div>
+
+                <div className="text-center text-[10px] text-white/40 mt-6 font-mono">
+                  NODE {selectedProject.id} • PART OF THE SM0K367 NEURAL CONTINUUM
                 </div>
               </div>
-            ))
-          ) : (
-            <div className="col-span-full text-center py-20 text-zinc-400">
-              No projects found matching your search.
-            </div>
+            </motion.div>
           )}
+        </AnimatePresence>
+
+        {/* Bottom HUD */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center text-xs font-mono text-white/30 flex gap-8">
+          <div>DRAG TO NAVIGATE • SCROLL TO ZOOM • CLICK NODES TO ENTER</div>
+          <div className="text-emerald-400">127 NODES ONLINE • ALL DEPLOYS LIVE</div>
         </div>
 
-        <div className="mt-20 text-center">
-          <p className="text-xs text-zinc-500 max-w-md mx-auto">
-            This archive represents hundreds of hours of rapid experimentation. 
-            Many projects share base repositories with different branches, 
-            environments, and feature explorations. The creative process is the product.
-          </p>
-          <div className="mt-8 flex justify-center gap-8 text-[10px] text-zinc-600">
-            <a href="https://github.com/Sm0k367" className="hover:text-white transition-colors">VIEW ALL REPOS ON GITHUB →</a>
-            <a href="https://vercel.com/dashboard" className="hover:text-white transition-colors">MANAGE ON VERCEL →</a>
+        {/* Archivist Lore Panel */}
+        <div className="absolute top-8 right-8 w-80 glass rounded-3xl p-6 text-sm border border-purple-500/30 pointer-events-auto">
+          <div className="uppercase text-purple-400 text-xs tracking-widest mb-4 flex items-center gap-2">
+            <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+            THE ARCHIVIST
+          </div>
+          <div className="text-white/80 leading-relaxed text-[13px]">
+            {selectedProject 
+              ? `This node belongs to the ${selectedProject.category || 'Experimental'} cluster. It is one of many iterations exploring the same concept. The creative lineage is strong here.`
+              : "You are floating inside the complete creative output of Sm0k367. 127 experiments. One continuous mind. The connections you see are the iteration history — shared codebases, evolving aesthetics, recurring obsessions."}
+          </div>
+          <div className="mt-6 text-[10px] text-purple-400/70">
+            The archive is alive. It remembers everything.
           </div>
         </div>
       </div>
 
-      {/* Project Detail Modal */}
-      {selectedProject && (
-        <div className="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-6" onClick={() => setSelectedProject(null)}>
-          <div 
-            className="glass max-w-2xl w-full rounded-3xl p-10 relative neon-border"
-            onClick={e => e.stopPropagation()}
-          >
-            <button 
-              onClick={() => setSelectedProject(null)}
-              className="absolute top-8 right-8 text-zinc-400 hover:text-white text-2xl leading-none"
-            >
-              ×
-            </button>
-            
-            <div className="mb-8">
-              <div className={`inline px-4 py-1 text-xs rounded-full border mb-6 ${getCategoryColor(selectedProject.category)}`}>
-                {selectedProject.category}
-              </div>
-              <h2 className="text-5xl font-bold tracking-tighter mb-3">{selectedProject.name}</h2>
-              <div className="font-mono text-sm text-[#00ffff]">{selectedProject.repo}</div>
-            </div>
-            
-            <p className="text-lg text-zinc-300 mb-10 leading-relaxed">
-              {selectedProject.description}
-            </p>
-            
-            <div className="grid grid-cols-2 gap-4 mb-12">
-              <button 
-                onClick={() => openLink(selectedProject.previewUrl, 'preview')}
-                className="py-6 bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl text-xl font-semibold hover:brightness-110 active:scale-[0.985] transition-all flex items-center justify-center gap-3"
-              >
-                LAUNCH PREVIEW
-                <span className="text-2xl">↗</span>
-              </button>
-              <button 
-                onClick={() => openLink(selectedProject.githubUrl, 'github')}
-                className="py-6 border border-white/30 hover:bg-white/5 rounded-2xl text-xl font-semibold transition-all flex items-center justify-center gap-3"
-              >
-                VIEW SOURCE ON GITHUB
-                <span className="text-2xl">↗</span>
-              </button>
-            </div>
-            
-            <div className="text-xs uppercase tracking-widest border-t border-white/10 pt-8 text-zinc-500">
-              Part of an evolving series of {selectedProject.category.toLowerCase()} experiments by Sm0k367. 
-              This deployment is one of many variations exploring the same core concept.
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Footer */}
-      <footer className="border-t border-white/10 py-12 text-center text-xs text-zinc-600">
-        <div className="max-w-7xl mx-auto px-8">
-          BUILT AS A META-PROJECT • CURATED FROM {projects.length} ENTRIES IN THE SM0K367 VERCEL DASHBOARD • 
-          MANY MORE VARIANTS EXIST IN THE WILD
-          <div className="mt-4 text-[10px]">A demonstration of portfolio-as-archive by the Kortix agent system</div>
-        </div>
-      </footer>
+      {/* Background ambient audio (silent until toggled) */}
+      <audio ref={audioRef} loop />
     </div>
   );
 }

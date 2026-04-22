@@ -47,4 +47,4 @@ if (projects.length < 10) {
 
 export const categories = ['All', 'AI', 'Music', 'Visuals', 'Streaming', 'Landing', 'Experimental', 'Avatar', 'Portal'] as const;
 
-export const meta = wizardData.meta || { total_projects_cataloged: projects.length };
+export const meta = wizardData.stats || { totalProjects: projects.length, liveDeployments: projects.length, analyzedRepos: 204 };
