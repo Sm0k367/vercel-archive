@@ -1,71 +1,771 @@
 {
-  "meta": {
-    "owner": "Sm0k367",
-    "alias": "DJ Smoke Stream / Epic Tech AI",
-    "github": "https://github.com/Sm0k367",
-    "total_projects_cataloged": 40,
-    "compiled_at": "2026-04-22"
+  "stats": {
+    "totalProjects": 127,
+    "liveDeployments": 127,
+    "analyzedRepos": 204
   },
   "projects": [
     {
+      "id": "nextjs",
+      "name": "nextjs",
+      "preview": "https://sm0k367.com",
+      "github": "https://github.com/Sm0k367/nextjs"
+    },
+    {
+      "id": "sanity-visual-editing-demo",
+      "name": "sanity-visual-editing-demo",
+      "preview": "https://sanity-visual-editing-demo-ashy.vercel.app",
+      "github": "https://github.com/Sm0k367/sanity-visual-editing-demo"
+    },
+    {
+      "id": "smoken-token",
+      "name": "smoken-token",
+      "preview": "https://smoken-token.vercel.app",
+      "github": "https://github.com/Sm0k367/SmokenToken"
+    },
+    {
+      "id": "epic-tech-ai",
+      "name": "epic-tech-ai",
+      "preview": "https://epic-tech-ai.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-tech-ai"
+    },
+    {
+      "id": "tunebot-ai-16zl",
+      "name": "tunebot-ai-16zl",
+      "preview": "https://tunebot-ai-16zl.vercel.app",
+      "github": "https://github.com/Sm0k367/tunebot-ai"
+    },
+    {
       "id": "epic-magic",
-      "name": "Epic Magic",
-      "title": "EPIC TECH AI • The Portal",
-      "description": "Cinematic cyberpunk landing portal — the main hub with DJ Smoke Stream character, golden hour visual effects, anti-hero chat via Grok 4, and full universe archive carousel. Flagship project.",
-      "previewUrl": "https://epic-magic.vercel.app",
-      "githubUrl": "https://github.com/Sm0k367/epic-magic",
-      "repo": "epic-magic",
-      "category": "Landing",
-      "tags": ["portal", "grok", "cinematic", "flagship"],
-      "status": "active"
+      "name": "epic-magic",
+      "preview": "https://epic-magic.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-magic"
     },
     {
       "id": "grok-magic-chat",
-      "name": "Grok Magic Chat",
-      "title": "Grok Magic Chat",
-      "description": "Pay Once, Chat Forever — custom xAI/Grok 4 chat interface with magical theming and anti-hero persona.",
-      "previewUrl": "https://grok-magic-chat.vercel.app",
-      "githubUrl": "https://github.com/Sm0k367/grok-magic-chat",
-      "repo": "grok-magic-chat",
-      "category": "AI",
-      "tags": ["chat", "grok", "anti-hero"],
-      "status": "active"
+      "name": "grok-magic-chat",
+      "preview": "https://grok-magic-chat.vercel.app",
+      "github": "https://github.com/Sm0k367/grok-magic-chat"
+    },
+    {
+      "id": "ai-pro",
+      "name": "ai-pro",
+      "preview": "https://ai-pro-gules.vercel.app",
+      "github": "https://github.com/Sm0k367/ai-pro"
+    },
+    {
+      "id": "midnight-ritual",
+      "name": "midnight-ritual",
+      "preview": "https://midnight-ritual.vercel.app",
+      "github": "https://github.com/Sm0k367/midnight-ritual"
+    },
+    {
+      "id": "eco-avtar",
+      "name": "eco-avtar",
+      "preview": "https://eco-avtar.vercel.app",
+      "github": "https://github.com/Sm0k367/eco-avatar"
+    },
+    {
+      "id": "eco-avatar-npk1",
+      "name": "eco-avatar-npk1",
+      "preview": "https://eco-avatar-npk1.vercel.app",
+      "github": "https://github.com/Sm0k367/eco-avatar"
+    },
+    {
+      "id": "gateway",
+      "name": "gateway",
+      "preview": "https://gateway-alpha-dusky.vercel.app",
+      "github": "https://github.com/Sm0k367/gateway"
+    },
+    {
+      "id": "gate",
+      "name": "gate",
+      "preview": "https://gate-nine-cyan.vercel.app",
+      "github": "https://github.com/Sm0k367/gate"
+    },
+    {
+      "id": "player",
+      "name": "player",
+      "preview": "https://player-dun.vercel.app",
+      "github": "https://github.com/Sm0k367/player"
+    },
+    {
+      "id": "g-cloud",
+      "name": "g-cloud",
+      "preview": "https://g-cloud.vercel.app",
+      "github": "https://github.com/Sm0k367/g-cloud"
+    },
+    {
+      "id": "gate-keeper",
+      "name": "gate-keeper",
+      "preview": "https://gate-keeper-rouge.vercel.app",
+      "github": "https://github.com/Sm0k367/gate-keeper"
+    },
+    {
+      "id": "music-vault",
+      "name": "music-vault",
+      "preview": "https://music-vault-eta.vercel.app",
+      "github": "https://github.com/Sm0k367/music-vault"
+    },
+    {
+      "id": "dj-os-2",
+      "name": "dj-os-2",
+      "preview": "https://dj-os-2.vercel.app",
+      "github": "https://github.com/Sm0k367/dj-os"
+    },
+    {
+      "id": "dj-os-1",
+      "name": "dj-os-1",
+      "preview": "https://dj-os-1.vercel.app",
+      "github": "https://github.com/Sm0k367/dj-os"
+    },
+    {
+      "id": "dj-os-9dk1",
+      "name": "dj-os-9dk1",
+      "preview": "https://dj-os-9dk1.vercel.app",
+      "github": "https://github.com/Sm0k367/dj-os"
+    },
+    {
+      "id": "dj-os",
+      "name": "dj-os",
+      "preview": "https://dj-os.vercel.app",
+      "github": "https://github.com/Sm0k367/dj-os"
+    },
+    {
+      "id": "aigent-zab1",
+      "name": "aigent-zab1",
+      "preview": "https://aigent-zab1.vercel.app",
+      "github": "https://github.com/Sm0k367/aigent"
+    },
+    {
+      "id": "stream",
+      "name": "stream",
+      "preview": "https://stream-psi-three.vercel.app",
+      "github": "https://github.com/Sm0k367/stream"
+    },
+    {
+      "id": "stream-s1yx",
+      "name": "stream-s1yx",
+      "preview": "https://stream-s1yx.vercel.app",
+      "github": "https://github.com/Sm0k367/stream"
+    },
+    {
+      "id": "aigent",
+      "name": "aigent",
+      "preview": "https://aigent-pi.vercel.app",
+      "github": "https://github.com/Sm0k367/aigent"
+    },
+    {
+      "id": "comfy-pixio-api",
+      "name": "comfy-pixio-api",
+      "preview": "https://comfy-pixio-api.vercel.app",
+      "github": "https://github.com/Sm0k367/comfy-pixio-api"
+    },
+    {
+      "id": "stream-u1l6",
+      "name": "stream-u1l6",
+      "preview": "https://stream-u1l6.vercel.app",
+      "github": "https://github.com/Sm0k367/stream"
+    },
+    {
+      "id": "1234epic",
+      "name": "1234epic",
+      "preview": "https://1234epic.vercel.app",
+      "github": "https://github.com/Sm0k367/stream"
+    },
+    {
+      "id": "stream1",
+      "name": "stream1",
+      "preview": "https://stream1-rho.vercel.app",
+      "github": "https://github.com/Sm0k367/stream"
+    },
+    {
+      "id": "stream-2y5i",
+      "name": "stream-2y5i",
+      "preview": "https://stream-2y5i.vercel.app",
+      "github": "https://github.com/Sm0k367/stream"
+    },
+    {
+      "id": "stream-at5o",
+      "name": "stream-at5o",
+      "preview": "https://stream-at5o.vercel.app",
+      "github": "https://github.com/Sm0k367/stream"
     },
     {
       "id": "dj-smoke-stream",
-      "name": "DJ Smoke Stream",
-      "title": "DJ Smoke Stream",
-      "description": "Flagship DJ site — 128 BPM midnight rituals, immersive audio-visual experience. Core of the music vertical.",
-      "previewUrl": "https://dj-smoke-stream.vercel.app",
-      "githubUrl": "https://github.com/Sm0k367/dj-smoke-stream",
-      "repo": "dj-smoke-stream",
-      "category": "Music",
-      "tags": ["dj", "music", "ritual", "flagship"],
-      "status": "active"
+      "name": "dj-smoke-stream",
+      "preview": "https://dj-smoke-stream.vercel.app",
+      "github": "https://github.com/Sm0k367/dj-smoke-stream"
+    },
+    {
+      "id": "epictech",
+      "name": "epictech",
+      "preview": "https://epictech-tau.vercel.app",
+      "github": "https://github.com/Sm0k367/epictech"
+    },
+    {
+      "id": "ai-lounge-after-dark-v2-behv",
+      "name": "ai-lounge-after-dark-v2-behv",
+      "preview": "https://ai-lounge-after-dark-v2-behv.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-v1"
+    },
+    {
+      "id": "stream-fq5f",
+      "name": "stream-fq5f",
+      "preview": "https://stream-fq5f.vercel.app",
+      "github": "https://github.com/Sm0k367/stream"
+    },
+    {
+      "id": "stream1111",
+      "name": "stream1111",
+      "preview": "https://stream1111.vercel.app",
+      "github": "https://github.com/Sm0k367/stream"
+    },
+    {
+      "id": "epictech-v1",
+      "name": "epictech-v1",
+      "preview": "https://epictech-v1.vercel.app",
+      "github": "https://github.com/Sm0k367/epictech-v1"
+    },
+    {
+      "id": "epictech-army",
+      "name": "epictech-army",
+      "preview": "https://epictech-army.vercel.app",
+      "github": "https://github.com/Sm0k367/epictech-army"
+    },
+    {
+      "id": "vidpage1",
+      "name": "vidpage1",
+      "preview": "https://vidpage1.vercel.app",
+      "github": "https://github.com/Sm0k367/vidpage1"
+    },
+    {
+      "id": "epic-tech-ai-digital-backpack-v2",
+      "name": "epic-tech-ai-digital-backpack-v2",
+      "preview": "https://epic-tech-ai-digital-backpack-v2.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-tech-ai-digital-backpack"
+    },
+    {
+      "id": "epic-tech-ai-digital-backpack",
+      "name": "epic-tech-ai-digital-backpack",
+      "preview": "https://epic-tech-ai-digital-backpack.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-tech-ai-digital-backpack"
+    },
+    {
+      "id": "tunebot-ai-ash2",
+      "name": "tunebot-ai-ash2",
+      "preview": "https://tunebot-ai-ash2.vercel.app",
+      "github": "https://github.com/Sm0k367/tunebot-ai"
+    },
+    {
+      "id": "epic-landing",
+      "name": "epic-landing",
+      "preview": "https://epic-landing-xi.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-landing"
+    },
+    {
+      "id": "tunebot-ai-594d",
+      "name": "tunebot-ai-594d",
+      "preview": "https://tunebot-ai-594d.vercel.app",
+      "github": "https://github.com/Sm0k367/tunebot-ai"
     },
     {
       "id": "tunebot-ai",
-      "name": "Tunebot AI",
-      "title": "Tunebot AI",
-      "description": "AI music generation and recommendation interface. Multiple deployments across iterations.",
-      "previewUrl": "https://tunebot-ai.vercel.app",
-      "githubUrl": "https://github.com/Sm0k367/tunebot-ai",
-      "repo": "tunebot-ai",
-      "category": "Music",
-      "tags": ["ai", "music", "bot"],
-      "status": "active"
+      "name": "tunebot-ai",
+      "preview": "https://tunebot-ai.vercel.app",
+      "github": "https://github.com/Sm0k367/tunebot-ai"
+    },
+    {
+      "id": "pixal-talev1",
+      "name": "pixal-talev1",
+      "preview": "https://pixal-talev1.vercel.app",
+      "github": "https://github.com/Sm0k367/pixal-talev1"
+    },
+    {
+      "id": "sub-swarm",
+      "name": "sub-swarm",
+      "preview": "https://sub-swarm.vercel.app",
+      "github": "https://github.com/Sm0k367/sub-swarm"
+    },
+    {
+      "id": "wtf",
+      "name": "wtf",
+      "preview": "https://wtf-drab.vercel.app",
+      "github": "https://github.com/Sm0k367/wtf"
+    },
+    {
+      "id": "pixal-tale",
+      "name": "pixal-tale",
+      "preview": "https://pixal-tale.vercel.app",
+      "github": "https://github.com/Sm0k367/pixal-tale"
+    },
+    {
+      "id": "homeowner1",
+      "name": "homeowner1",
+      "preview": "https://homeowner1-beryl.vercel.app",
+      "github": "https://github.com/Sm0k367/homeowner"
+    },
+    {
+      "id": "homeowners",
+      "name": "homeowners",
+      "preview": "https://homeowners-rho.vercel.app",
+      "github": "https://github.com/Sm0k367/homeowner"
+    },
+    {
+      "id": "homeowner",
+      "name": "homeowner",
+      "preview": "https://homeowner-three.vercel.app",
+      "github": "https://github.com/Sm0k367/homeowner"
+    },
+    {
+      "id": "stream-syla",
+      "name": "stream-syla",
+      "preview": "https://stream-syla.vercel.app",
+      "github": "https://github.com/Sm0k367/stream"
+    },
+    {
+      "id": "dj-os-9",
+      "name": "dj-os-9",
+      "preview": "https://dj-os-9.vercel.app",
+      "github": "https://github.com/Sm0k367/dj-os"
+    },
+    {
+      "id": "dj-os-sm35",
+      "name": "dj-os-sm35",
+      "preview": "https://dj-os-sm35.vercel.app",
+      "github": "https://github.com/Sm0k367/dj-os"
+    },
+    {
+      "id": "epic-tech-ai-interactive",
+      "name": "epic-tech-ai-interactive",
+      "preview": "https://epic-tech-ai-interactive.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-tech-ai-interactive"
+    },
+    {
+      "id": "aigent-zrxo",
+      "name": "aigent-zrxo",
+      "preview": "https://aigent-zrxo.vercel.app",
+      "github": "https://github.com/Sm0k367/video"
+    },
+    {
+      "id": "stream-cuhp",
+      "name": "stream-cuhp",
+      "preview": "https://stream-cuhp.vercel.app",
+      "github": "https://github.com/Sm0k367/dark"
+    },
+    {
+      "id": "trading-ecosystem",
+      "name": "trading-ecosystem",
+      "preview": "https://trading-ecosystem.vercel.app",
+      "github": "https://github.com/Sm0k367/trading-ecosystem"
+    },
+    {
+      "id": "test1",
+      "name": "test1",
+      "preview": "https://test1-alpha-rose-49.vercel.app",
+      "github": "https://github.com/Sm0k367/test1"
+    },
+    {
+      "id": "gallery",
+      "name": "gallery",
+      "preview": "https://gallery-iota-plum.vercel.app",
+      "github": "https://github.com/Sm0k367/gallery"
+    },
+    {
+      "id": "smoke-stream",
+      "name": "smoke-stream",
+      "preview": "https://smoke-stream.vercel.app",
+      "github": "https://github.com/Sm0k367/dj-smoke-stream"
+    },
+    {
+      "id": "eco-avatar-gb8f",
+      "name": "eco-avatar-gb8f",
+      "preview": "https://eco-avatar-gb8f.vercel.app",
+      "github": "https://github.com/Sm0k367/eco-avatar"
+    },
+    {
+      "id": "eco-avatar-znfx",
+      "name": "eco-avatar-znfx",
+      "preview": "https://eco-avatar-znfx.vercel.app",
+      "github": "https://github.com/Sm0k367/eco-avatar"
+    },
+    {
+      "id": "eco-avaar",
+      "name": "eco-avaar",
+      "preview": "https://eco-avaar.vercel.app",
+      "github": "https://github.com/Sm0k367/eco-avatar"
+    },
+    {
+      "id": "eco-avatar",
+      "name": "eco-avatar",
+      "preview": "https://eco-avatar.vercel.app",
+      "github": "https://github.com/Sm0k367/eco-avatar"
+    },
+    {
+      "id": "avatar-tbzs",
+      "name": "avatar-tbzs",
+      "preview": "https://avatar-tbzs.vercel.app",
+      "github": "https://github.com/Sm0k367/avatar"
+    },
+    {
+      "id": "epic-vatars",
+      "name": "epic-vatars",
+      "preview": "https://epic-vatars.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-avatar"
+    },
+    {
+      "id": "epic-vatar",
+      "name": "epic-vatar",
+      "preview": "https://epic-vatar.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-avatar"
+    },
+    {
+      "id": "epicaibottar",
+      "name": "epicaibottar",
+      "preview": "https://epicaibottar.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-avatar"
+    },
+    {
+      "id": "epicaibot",
+      "name": "epicaibot",
+      "preview": "https://epicaibot.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-avatar"
+    },
+    {
+      "id": "epicai",
+      "name": "epicai",
+      "preview": "https://epicai-psi.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-avatar"
+    },
+    {
+      "id": "epicaiavatar",
+      "name": "epicaiavatar",
+      "preview": "https://epicaiavatar.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-avatar"
+    },
+    {
+      "id": "epicavatar",
+      "name": "epicavatar",
+      "preview": "https://epicavatar.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-avatar"
+    },
+    {
+      "id": "avatar",
+      "name": "avatar",
+      "preview": "https://avatar-psi-taupe.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-avatar"
     },
     {
       "id": "epic-avatar",
-      "name": "Epic Avatar",
-      "title": "Epic Avatar / Vatar Series",
-      "description": "AI avatar generator and visual identity experiments. Large family of variants (epic-vatar, eco-avatar, epicaibot, etc.).",
-      "previewUrl": "https://epic-avatar.vercel.app",
-      "githubUrl": "https://github.com/Sm0k367/epic-avatar",
-      "repo": "epic-avatar",
-      "category": "Avatar",
-      "tags": ["avatar", "ai", "generator", "visual"],
-      "status": "active"
+      "name": "epic-avatar",
+      "preview": "https://epic-avatar-seven.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-avatar"
+    },
+    {
+      "id": "eco-3edk",
+      "name": "eco-3edk",
+      "preview": "https://eco-3edk.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-avatar"
+    },
+    {
+      "id": "eco",
+      "name": "eco",
+      "preview": "https://eco-five-pied.vercel.app",
+      "github": "https://github.com/Sm0k367/eco"
+    },
+    {
+      "id": "sm0k367-ai-images",
+      "name": "sm0k367-ai-images",
+      "preview": "https://sm0k367-ai-images.vercel.app",
+      "github": "https://github.com/Sm0k367/sm0k367-ai-images"
+    },
+    {
+      "id": "ai-lounge-after-dark",
+      "name": "ai-lounge-after-dark",
+      "preview": "https://ai-lounge-after-dark.vercel.app",
+      "github": "https://github.com/Sm0k367/ai-lounge-after-dark"
+    },
+    {
+      "id": "epic_bolt",
+      "name": "epic_bolt",
+      "preview": "https://epicbolt.vercel.app",
+      "github": "https://github.com/Sm0k367/4"
+    },
+    {
+      "id": "smokestream-ai-studio",
+      "name": "smokestream-ai-studio",
+      "preview": "https://smokestream-ai-studio.vercel.app",
+      "github": "https://github.com/Sm0k367/smokestream-ai-studio"
+    },
+    {
+      "id": "4",
+      "name": "4",
+      "preview": "https://4-ten-mu.vercel.app",
+      "github": "https://github.com/Sm0k367/4"
+    },
+    {
+      "id": "oh",
+      "name": "oh",
+      "preview": "https://oh-zeta.vercel.app",
+      "github": "https://github.com/Sm0k367/oh"
+    },
+    {
+      "id": "portals-v2",
+      "name": "portals-v2",
+      "preview": "https://portals-v2.vercel.app",
+      "github": "https://github.com/Sm0k367/storybook-of-portals"
+    },
+    {
+      "id": "portals",
+      "name": "portals",
+      "preview": "https://portals-theta.vercel.app",
+      "github": "https://github.com/Sm0k367/portals"
+    },
+    {
+      "id": "epic-portal",
+      "name": "epic-portal",
+      "preview": "https://epic-portal.vercel.app",
+      "github": "https://github.com/Sm0k367/portals"
+    },
+    {
+      "id": "portal",
+      "name": "portal",
+      "preview": "https://portal-three-ochre.vercel.app",
+      "github": "https://github.com/Sm0k367/portals"
+    },
+    {
+      "id": "remote-z996",
+      "name": "remote-z996",
+      "preview": "https://remote-z996.vercel.app",
+      "github": "https://github.com/Sm0k367/remote"
+    },
+    {
+      "id": "promptstudio",
+      "name": "promptstudio",
+      "preview": "https://promptstudio-tau.vercel.app",
+      "github": "https://github.com/Sm0k367/promptstudio"
+    },
+    {
+      "id": "website",
+      "name": "website",
+      "preview": "https://website-eight-beige-18.vercel.app",
+      "github": "https://github.com/Sm0k367/website"
+    },
+    {
+      "id": "epictech-site",
+      "name": "epictech-site",
+      "preview": "https://epictech-site.vercel.app",
+      "github": "https://github.com/Sm0k367/epictech-site"
+    },
+    {
+      "id": "a1-wusd",
+      "name": "a1-wusd",
+      "preview": "https://a1-wusd.vercel.app",
+      "github": "https://github.com/Sm0k367/epictech-site"
+    },
+    {
+      "id": "a1",
+      "name": "a1",
+      "preview": "https://a1-ecru.vercel.app",
+      "github": "https://github.com/Sm0k367/a1"
+    },
+    {
+      "id": "site",
+      "name": "site",
+      "preview": "https://site-sigma-ashy.vercel.app",
+      "github": "https://github.com/Sm0k367/site"
+    },
+    {
+      "id": "site-page",
+      "name": "site-page",
+      "preview": "https://site-page-tau.vercel.app",
+      "github": "https://github.com/Sm0k367/site"
+    },
+    {
+      "id": "site-psd3",
+      "name": "site-psd3",
+      "preview": "https://site-psd3.vercel.app",
+      "github": "https://github.com/Sm0k367/site"
+    },
+    {
+      "id": "epic-tech-ai-landing",
+      "name": "epic-tech-ai-landing",
+      "preview": "https://epic-tech-ai-landing.vercel.app",
+      "github": "https://github.com/Sm0k367/site"
+    },
+    {
+      "id": "epic-site",
+      "name": "epic-site",
+      "preview": "https://epic-site-kohl.vercel.app",
+      "github": "https://github.com/Sm0k367/site"
+    },
+    {
+      "id": "epicsite",
+      "name": "epicsite",
+      "preview": "https://epicsite.vercel.app",
+      "github": "https://github.com/Sm0k367/site"
+    },
+    {
+      "id": "intercom",
+      "name": "intercom",
+      "preview": "https://intercom-bay.vercel.app",
+      "github": "https://github.com/Sm0k367/intercom"
+    },
+    {
+      "id": "lyric-visualizer-v2-0",
+      "name": "lyric-visualizer-v2-0",
+      "preview": "https://lyric-visualizer-v2-0.vercel.app",
+      "github": "https://github.com/Sm0k367/lyric-visualizer-v2.0"
+    },
+    {
+      "id": "epic-help",
+      "name": "epic-help",
+      "preview": "https://epic-help.vercel.app",
+      "github": "https://github.com/Sm0k367/help"
+    },
+    {
+      "id": "remote",
+      "name": "remote",
+      "preview": "https://remote-delta.vercel.app",
+      "github": "https://github.com/Sm0k367/remote"
+    },
+    {
+      "id": "storybook-of-portals",
+      "name": "storybook-of-portals",
+      "preview": "https://storybook-of-portals.vercel.app",
+      "github": "https://github.com/Sm0k367/storybook-of-portals"
+    },
+    {
+      "id": "remote-rescue-dtp6",
+      "name": "remote-rescue-dtp6",
+      "preview": "https://remote-rescue-dtp6.vercel.app",
+      "github": "https://github.com/Sm0k367/remote-rescue"
+    },
+    {
+      "id": "help",
+      "name": "help",
+      "preview": "https://help-zeta-two.vercel.app",
+      "github": "https://github.com/Sm0k367/help"
+    },
+    {
+      "id": "dream",
+      "name": "dream",
+      "preview": "https://dream-woad-three.vercel.app",
+      "github": "https://github.com/Sm0k367/dream"
+    },
+    {
+      "id": "remote-rescue",
+      "name": "remote-rescue",
+      "preview": "https://remote-rescue.vercel.app",
+      "github": "https://github.com/Sm0k367/remote-rescue"
+    },
+    {
+      "id": "landing-jce5",
+      "name": "landing-jce5",
+      "preview": "https://landing-jce5.vercel.app",
+      "github": "https://github.com/Sm0k367/tvremote"
+    },
+    {
+      "id": "epic",
+      "name": "epic",
+      "preview": "https://epic-omega-five.vercel.app",
+      "github": "https://github.com/Sm0k367/epicwebsite"
+    },
+    {
+      "id": "landhere",
+      "name": "landhere",
+      "preview": "https://landhere.vercel.app",
+      "github": "https://github.com/Sm0k367/landing"
+    },
+    {
+      "id": "landing",
+      "name": "landing",
+      "preview": "https://landing-cyan-zeta.vercel.app",
+      "github": "https://github.com/Sm0k367/landing"
+    },
+    {
+      "id": "homeguard",
+      "name": "homeguard",
+      "preview": "https://homeguard-nine.vercel.app",
+      "github": "https://github.com/Sm0k367/homeguardpro"
+    },
+    {
+      "id": "anarrative",
+      "name": "anarrative",
+      "preview": "https://anarrative.vercel.app",
+      "github": "https://github.com/Sm0k367/narrative"
+    },
+    {
+      "id": "awake",
+      "name": "awake",
+      "preview": "https://awake-virid.vercel.app",
+      "github": "https://github.com/Sm0k367/awake"
+    },
+    {
+      "id": "narrative",
+      "name": "narrative",
+      "preview": "https://narrative-psi.vercel.app",
+      "github": "https://github.com/Sm0k367/narrative"
+    },
+    {
+      "id": "narrative2",
+      "name": "narrative2",
+      "preview": "https://narrative2.vercel.app",
+      "github": "https://github.com/Sm0k367/narrative"
+    },
+    {
+      "id": "narrative1",
+      "name": "narrative1",
+      "preview": "https://narrative1.vercel.app",
+      "github": "https://github.com/Sm0k367/narrative"
+    },
+    {
+      "id": "narrative3",
+      "name": "narrative3",
+      "preview": "https://narrative3.vercel.app",
+      "github": "https://github.com/Sm0k367/narrative"
+    },
+    {
+      "id": "homeguardpro",
+      "name": "homeguardpro",
+      "preview": "https://homeguardpro.vercel.app",
+      "github": "https://github.com/Sm0k367/homeguardpro"
+    },
+    {
+      "id": "epictech-website",
+      "name": "epictech-website",
+      "preview": "https://epictech-website.vercel.app",
+      "github": "https://github.com/Sm0k367/epictech-website"
+    },
+    {
+      "id": "epic-tech-ai-engineering",
+      "name": "epic-tech-ai-engineering",
+      "preview": "https://epic-tech-ai-engineering.vercel.app",
+      "github": "https://github.com/Sm0k367/epic-tech-ai-engineering"
+    },
+    {
+      "id": "smokestream-images",
+      "name": "smokestream-images",
+      "preview": "https://smokestream-images.vercel.app",
+      "github": "https://github.com/Sm0k367/sm0k367-ai-images"
+    },
+    {
+      "id": "nextjs-subscription-payments",
+      "name": "nextjs-subscription-payments",
+      "preview": "https://nextjs-subscription-payments-self-sigma.vercel.app",
+      "github": "https://github.com/Sm0k367/nextjs-subscription-payments"
+    },
+    {
+      "id": "smoke-stream42-o",
+      "name": "smoke-stream42-o",
+      "preview": "https://smoke-stream42-o.vercel.app",
+      "github": "https://github.com/Sm0k367/SmokeStream42O"
+    },
+    {
+      "id": "sm0k367ai-nextjs-chat",
+      "name": "sm0k367ai-nextjs-chat",
+      "preview": "https://sm0k367ai-nextjs-chat-cyan.vercel.app",
+      "github": "https://github.com/Sm0k367/sm0k367ai-nextjs-chat"
     }
   ]
 }
